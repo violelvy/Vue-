@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-11-01 10:55:06
+ * @LastEditTime: 2019-11-01 13:39:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \练习\demo\index.html
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">{{content}}</div>
+    <script>
+        //js原生
+        // var dom = document.getElementById("app")
+        // dom.innerHTML = 'hello world'
+        // setTimeout(() => {
+        //     dom.innerHTML = "bye world"
+        // },2000)
+        
+        //vue代码
+        //创建vue实例，接受一些配置项
+        var app = new Vue({
+            el:'#app',    //实例负责管理的区域  限制了DOM处理的范围
+            data: {
+                content: 'hello world'
+            }  //定义了一组数据
+        })
+        setTimeout(() => {
+            app.$data.content = "bye zj"  
+            //data的别名
+        }, 2000);
+    
+    </script>
+</body>
+</html>

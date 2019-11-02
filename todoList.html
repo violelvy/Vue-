@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-11-01 13:39:41
+ * @LastEditTime: 2019-11-01 15:23:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \练习\demo\todoList.html
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>toDoList</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="inputValue">
+        <button v-on:click="handler">提交</button>
+        <ul>
+            <li v-for="item in list" :key="item"> {{item}}</li>
+        </ul>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                list:[],
+                inputValue:''
+            },
+            methods: {
+                handler: function () {
+                    this.list.push(this.inputValue)
+                    this.inputValue = ""
+                }
+            },
+        })
+    </script>
+</body>
+</html>
